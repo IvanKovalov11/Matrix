@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include <iostream>
 #include <sstream>
 using namespace std;
@@ -10,7 +9,7 @@ bool read_numbers(int matrix[3][3])
 	{
 		string string;
 		getline(cin, string);
-		istringstream stream(string);			
+		istringstream stream(string);
 		for (int j = 0; j < 3; ++j)
 		{
 			if (!(stream >> matrix[i][j]))
@@ -18,6 +17,10 @@ bool read_numbers(int matrix[3][3])
 				success = false;
 				break;
 			}
+		}
+		if (!(success))
+		{
+			break;
 		}
 	}
 
@@ -40,8 +43,8 @@ int main()
 				for (int i = 0; i < 3; ++i)
 				{
 					for (int j = 0; j < 3; ++j)
-					{ 
-						cout <<  mtx1[i][j] + mtx2[i][j]  << " ";
+					{
+						cout << mtx1[i][j] + mtx2[i][j] << " ";
 					}
 					cout << endl;
 				}
@@ -99,7 +102,7 @@ int main()
 		}
 		else
 		{
-			cout << "Error has been found while program was running  \n"; 
+			cout << "Error has been found while program was running  \n";
 			return -1;
 		}
 	}
@@ -107,6 +110,6 @@ int main()
 	{
 		cout << "Error has been found while program was running  \n";
 		return -1;
-	}	
-	system("pause");
+	}
+	return 0;
 }
